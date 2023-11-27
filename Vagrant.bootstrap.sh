@@ -53,7 +53,7 @@ fi
 if [ ! -d "$APP_PATH" ]; then
 	echo "clono el repositorio"
 	cd $APACHE_ROOT
-	sudo git clone https://github.com/Fichen/utn-devops-app.git
+	sudo git clone https://github.com/JuaMateu/utn-devops-app.git
 fi
 
 cd $APP_PATH
@@ -85,4 +85,7 @@ if [ ! -x "$(command -v docker)" ]; then
 	
 	#Lo configuro para que inicie en el arranque
 	sudo systemctl enable docker
+
+	cd /vagrant/docker
+	sudo docker-compose up -d
 fi
